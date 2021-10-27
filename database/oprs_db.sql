@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2021 at 02:04 PM
+-- Generation Time: Oct 27, 2021 at 09:30 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -44,13 +44,13 @@ CREATE TABLE `tbl_member` (
 --
 
 INSERT INTO `tbl_member` (`m_ID`, `m_NameTitle`, `m_FName`, `m_LName`, `m_Email`, `m_Password`, `m_Tel`, `m_Img`, `m_Department`) VALUES
-(1, 'นาย', 'admin', 'admin', 'admin@gmail.com', '123456', '1234567890', '', 'admin'),
-(2, 'นาง', 'boss', 'boss', 'boss@gmail.com', '123456', '1234567890', '', 'boss'),
-(3, 'นางสาว', 'staff', 'staff', 'staff@gmail.com', '123456', '1234567890', '', 'staff'),
-(4, 'นาย', 'employee', 'employee', 'employee@gmail.com', '123456', '1234567890', '', 'employee'),
-(5, 'นาย', 'bill', 'murray', 'admin@gmail.com', '12345', '1234567890', '', 'admin'),
+(1, 'นาย', 'admin', 'admin', 'admin@gmail.com', '123456', '1234567890', '20211027329021010.png', 'admin'),
+(2, 'นาง', 'boss', 'boss', 'boss@gmail.com', '123456', '1234567890', '20211027329021010.png', 'boss'),
+(3, 'นางสาว', 'staff', 'staff', 'staff@gmail.com', '123456', '1234567890', '20211027329021010.png', 'staff'),
+(4, 'นาย', 'employee', 'employee', 'employee@gmail.com', '123456', '1234567890', '20211027329021010.png', 'employee'),
+(5, 'นาย', 'bill', 'murray', 'admin@gmail.com', '12345', '1234567890', '20211027329021010.png', 'admin'),
 (6, 'นาย', 'gg', 'ez', 'gg@gmail.com', '123456', '1234567890', '20211027329021010.png', 'admin'),
-(7, 'นางสาว', 'mm', 'mm', 'mm@gmail.com', '123456', '1234567890', '202110271522874706.png', 'admin'),
+(7, 'นางสาว', 'mm', 'mm', 'mm@gmail.com', '1234567', '1234567890', '202110271522874706.png', 'admin'),
 (8, 'นาย', 'niti', 'gg', 'bill@gmail.com', '123456', '1234567890', '202110271383136968.png', 'admin');
 
 --

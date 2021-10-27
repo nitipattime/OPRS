@@ -43,30 +43,30 @@ if($upload != '') {   //not select file
 	}
 	// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 	
-		$sql = "INSERT INTO tbl_member 
-        (
-        m_NameTitle,
-        m_FName,
-        m_LName,
-        m_Email,
-        m_Password,
-        m_Tel,
-        m_Img,
-        m_Department
-        ) 
-		VALUES
-        (
-        '$m_NameTitle',
-        '$m_FName',
-        '$m_LName',
-        '$m_Email',
-        '$m_Password',
-        '$m_Tel',
-        '$newname',
-        '$m_Department'
-        )";
-		
-		$result = mysqli_query($condb, $sql) or die ("Error in query: $sql ");
+    $sql = "INSERT INTO tbl_member 
+    (
+    m_NameTitle,
+    m_FName,
+    m_LName,
+    m_Email,
+    m_Password,
+    m_Tel,
+    m_Img,
+    m_Department
+    ) 
+    VALUES
+    (
+    '$m_NameTitle',
+    '$m_FName',
+    '$m_LName',
+    '$m_Email',
+    '$m_Password',
+    '$m_Tel',
+    '$newname',
+    '$m_Department'
+    )";
+    
+    $result = mysqli_query($condb, $sql) or die ("Error in query: $sql ");
 	
 	mysqli_close($condb);
 	// javascript แสดงการ upload file

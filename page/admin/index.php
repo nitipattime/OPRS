@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <br />
-                                    <table id="example2" class="table table-bordered table-striped dataTable " role="grid" aria-describedby="example1_info">
+                                    <table id="example1" class="table table-bordered table-striped dataTable " role="grid" aria-describedby="example1_info">
                                         <thead>
                                             <tr role="row" class="info" >
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 5%;" >id</th>

@@ -3,6 +3,9 @@
 ?>
 <?php include("../service/head.php"); ?>
 
+<?php include("show_edit_member_db.php"); ?>
+<?php foreach ($result as $row) { ?>
+	
 <body class="skin-red sidebar-mini">
 	<div class="wrapper">
 		<!-- Main Header -->
@@ -34,133 +37,29 @@
 									<!-- <h3 class="box-title"> +ข่าวใหม่ </h3> -->
 								</div><!-- /.box-header -->
 								<!-- form start -->
-								<form role="form" action="http://127.0.0.1/eprojectv1.1/member/editpwd" method="post" class="form-horizontal">
+								<form role="form" action="repwd_member_db.php" method="post" class="form-horizontal">
 									<div class="box-body">
 										<div class="form-group">
 											<div class="col-sm-2 control-label">
 												ชื่อตำแหน่ง
 											</div>
 											<div class="col-sm-3">
-												<select name="ref_pid" class="form-control" required disabled>
-													<option value="3">
-														-staff-
+												<select name="m_Department" class="form-control" required disabled>
+													<option value="<?php echo $row['m_Department']?>">
+														-<?php echo $row['m_Department']?>-
 													</option>
 													<option value="">-เลือกข้อมูล-</option>
-
-													<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-														<h4>A PHP Error was encountered</h4>
-
-														<p>Severity: Warning</p>
-														<p>Message: Undefined variable $rspo</p>
-														<p>Filename: admin/member_form_pwd.php</p>
-														<p>Line Number: 36</p>
-
-
-														<p>Backtrace:</p>
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\application\views\admin\member_form_pwd.php<br />
-															Line: 36<br />
-															Function: _error_handler </p>
-
-
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\application\controllers\Member.php<br />
-															Line: 339<br />
-															Function: view </p>
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\index.php<br />
-															Line: 315<br />
-															Function: require_once </p>
-
-
-
-
-													</div>
-													<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-														<h4>A PHP Error was encountered</h4>
-
-														<p>Severity: Warning</p>
-														<p>Message: foreach() argument must be of type array|object, null given</p>
-														<p>Filename: admin/member_form_pwd.php</p>
-														<p>Line Number: 36</p>
-
-
-														<p>Backtrace:</p>
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\application\views\admin\member_form_pwd.php<br />
-															Line: 36<br />
-															Function: _error_handler </p>
-
-
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\application\controllers\Member.php<br />
-															Line: 339<br />
-															Function: view </p>
-
-
-
-
-
-
-														<p style="margin-left:10px">
-															File: C:\xampp\htdocs\eprojectv1.1\index.php<br />
-															Line: 315<br />
-															Function: require_once </p>
-
-
-
-
-													</div>
 												</select>
 											</div>
 										</div>
-										<div class="form-group">
-											<div class="col-sm-2 control-label">
-												Username
-											</div>
-											<div class="col-sm-3">
-												<input type="text" name="m_username" class="form-control" required value="staff" disabled>
-											</div>
-										</div>
+										
 										<div class="form-group">
 											<div class="col-sm-2 control-label">
 												คำนำหน้า
 											</div>
-											<div class="col-sm-1">
-												<select name="m_fname" class="form-control" required disabled>
-													<option value="นาย">-นาย-</option>
+											<div class="col-sm-2">
+												<select name="m_NameTitle" class="form-control" required disabled>
+													<option value="นาย">-<?php echo $row['m_NameTitle']?>-</option>
 													<option value="">-เลือกข้อมูล-</option>
 													<option value="นาย">-นาย-</option>
 													<option value="นางสาว">-นางสาว-</option>
@@ -173,7 +72,7 @@
 												ชื่อ
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_name" class="form-control" required value="จัดการ12" disabled>
+												<input type="text" name="m_FName" class="form-control" required value="<?php echo $row['m_FName']?>" disabled>
 											</div>
 										</div>
 										<div class="form-group">
@@ -181,8 +80,17 @@
 												นามสกุล
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_lname" class="form-control" required value="พัสดุ12" disabled>
-												<input type="hidden" name="m_id" class="form-control" required value="10">
+												<input type="text" name="m_LName" class="form-control" required value="<?php echo $row['m_LName']?>" disabled>
+												
+											</div>
+										</div>
+
+										<div class="form-group">
+											<div class="col-sm-2 control-label">
+												email
+											</div>
+											<div class="col-sm-4">
+												<input type="text" name="m_Email" class="form-control" required value="<?php echo $row['m_Email']?>" disabled>
 											</div>
 										</div>
 
@@ -191,8 +99,11 @@
 												New Password
 											</div>
 											<div class="col-sm-3">
-												<input type="password" name="m_password" class="form-control" required minlength="3" placeholder="password" value="">
-												<span class="fr"></span>
+												<!-- Input Hidden m_ID -->
+												<input type="hidden" name="m_ID" class="form-control" required value="<?php echo $row['m_ID']?>">
+												<input type="password" name="m_Password" class="form-control" required minlength="3" placeholder="password" value="">
+
+												
 											</div>
 										</div>
 
@@ -202,7 +113,7 @@
 												Confirm Password
 											</div>
 											<div class="col-sm-3">
-												<input type="password" name="m_password2" class="form-control" required minlength="3" placeholder="confirm password" value="">
+												<input type="password" name="m_Password2" class="form-control" required minlength="3" placeholder="confirm password" value="">
 												<span class="fr"></span>
 											</div>
 										</div>
@@ -224,6 +135,8 @@
 
 									</div><!-- /.box-body -->
 								</form>
+								<?php } ?>
+
 							</div>
 						</div>
 					</div>
@@ -244,7 +157,7 @@
 </body>
 
 </html>
-<script>
+<!-- <script>
 	$(document).ready(function() {
 		$('#example1').DataTable({
 			"aaSorting": [
@@ -266,7 +179,7 @@
 			'autoWidth': false
 		})
 	})
-</script>
+</script> -->
 <!-- <script type="text/javascript">
 $(function () {
 });

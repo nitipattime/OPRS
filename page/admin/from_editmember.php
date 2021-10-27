@@ -1,7 +1,10 @@
-<?php 
+<?php
 //echo $_GET['m_ID'];
 ?>
 <?php include("../service/head.php"); ?>
+
+<?php include("show_edit_member_db.php"); ?>
+<?php foreach ($result as $row) { ?>
 
 <body class="skin-red sidebar-mini">
 	<div class="wrapper">
@@ -18,8 +21,8 @@
 					ฟอร์มแก้ไขข้อมูลสมาชิก
 				</h1>
 				<ol class="breadcrumb">
-					<li><a href="http://127.0.0.1/eprojectv1.1/"><i class="fa fa-dashboard"></i> หน้าแรก</a></li>
-					<li><a href="http://127.0.0.1/eprojectv1.1/member"> จัดการสมาชิก </a></li>
+					<li><a href="index.php"><i class="fa fa-dashboard"></i> หน้าแรก</a></li>
+					<li><a href="from_editmember.php?m_ID=<?php echo $row['m_ID']?>"> จัดการสมาชิก </a></li>
 					<li class="active">เพิ่มข้อมูลใหม่</li>
 				</ol>
 			</section>
@@ -34,26 +37,28 @@
 									<!-- <h3 class="box-title"> +ข่าวใหม่ </h3> -->
 								</div><!-- /.box-header -->
 								<!-- form start -->
-								<form role="form" action="http://127.0.0.1/eprojectv1.1/member/editdata" method="post" class="form-horizontal" enctype="multipart/form-data">
+
+								
+								<form role="form" action="edit_member_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
 									<div class="box-body">
 										<div class="form-group">
 											<div class="col-sm-2 control-label">
 												ชื่อตำแหน่ง
 											</div>
 											<div class="col-sm-3">
-												<select name="ref_pid" class="form-control" required>
-													<option value="3">
-														-staff-
+												<select name="m_Department" class="form-control" required>
+													<option value="<?php echo $row['m_Department']?>">
+													-<?php echo $row['m_Department']?>-
 													</option>
 													<option value="">-เลือกข้อมูล-</option>
-													<option value="1">-admin-</option>
-													<option value="2">-Boss-</option>
-													<option value="3">-staff-</option>
-													<option value="4">-Employee-</option>
+													<option value="admin">-admin-</option>
+													<option value="boss">-Boss-</option>
+													<option value="staff">-staff-</option>
+													<option value="employee">-Employee-</option>
 												</select>
 											</div>
 										</div>
-										<div class="form-group">
+										<!-- <div class="form-group">
 											<div class="col-sm-2 control-label">
 												Username
 											</div>
@@ -61,14 +66,14 @@
 												<input type="text" name="m_username" class="form-control" required value="staff" disabled>
 
 											</div>
-										</div>
+										</div> -->
 										<div class="form-group">
 											<div class="col-sm-2 control-label">
 												คำนำหน้า
 											</div>
-											<div class="col-sm-1">
-												<select name="m_fname" class="form-control" required>
-													<option value="นาย">-นาย-</option>
+											<div class="col-sm-2">
+												<select name="m_NameTitle" class="form-control" required >
+													<option value="นาย">-<?php echo $row['m_NameTitle']?>-</option>
 													<option value="">-เลือกข้อมูล-</option>
 													<option value="นาย">-นาย-</option>
 													<option value="นางสาว">-นางสาว-</option>
@@ -80,8 +85,8 @@
 											<div class="col-sm-2 control-label">
 												ชื่อ
 											</div>
-											<div class="col-sm-6">
-												<input type="text" name="m_name" class="form-control" required value="จัดการ12">
+											<div class="col-sm-4">
+												<input type="text" name="m_name" class="form-control" required value="<?php echo $row['m_FName']?>">
 												</span>
 											</div>
 										</div>
@@ -90,7 +95,7 @@
 												นามสกุล
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_lname" class="form-control" required value="พัสดุ12">
+												<input type="text" name="m_lname" class="form-control" required value="<?php echo $row['m_LName']?>">
 												<input type="hidden" name="m_id" class="form-control" required value="10">
 											</div>
 										</div>
@@ -100,7 +105,7 @@
 												email
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_email" class="form-control" required value="abc12@g.com">
+												<input type="text" name="m_email" class="form-control" required value="<?php echo $row['m_Email']?>" disabled>
 											</div>
 										</div>
 
@@ -109,7 +114,7 @@
 												phone
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_phone" class="form-control" required value="099999999222">
+												<input type="text" name="m_phone" class="form-control" required value="<?php echo $row['m_Tel']?>">
 											</div>
 										</div>
 
@@ -121,7 +126,7 @@
 											<div class="col-sm-4">
 												<br>
 												ภาพเก่า <br><br>
-												<img src="http://127.0.0.1/eprojectv1.1/uploads/ff2fe2e3de23846f7bdaa874ab8af3eb.png" width="300px">
+												<img src="../../assets/images/<?php echo $row['m_Img']?>" width="300px">
 												<br><br>
 												เลือกไฟล์ใหม่<br>
 												<input type="file" name="m_img" class="form-control" accept="image/*">
@@ -144,6 +149,7 @@
 
 									</div><!-- /.box-body -->
 								</form>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
