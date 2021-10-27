@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 09:23 PM
+-- Generation Time: Oct 27, 2021 at 02:04 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -29,11 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_member` (
   `m_ID` int(11) NOT NULL,
+  `m_NameTitle` varchar(10) NOT NULL,
   `m_FName` varchar(100) NOT NULL,
   `m_LName` varchar(100) NOT NULL,
   `m_Email` varchar(100) NOT NULL,
   `m_Password` varchar(50) NOT NULL,
   `m_Tel` varchar(10) NOT NULL,
+  `m_Img` varchar(200) NOT NULL,
   `m_Department` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,11 +43,15 @@ CREATE TABLE `tbl_member` (
 -- Dumping data for table `tbl_member`
 --
 
-INSERT INTO `tbl_member` (`m_ID`, `m_FName`, `m_LName`, `m_Email`, `m_Password`, `m_Tel`, `m_Department`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', '123456', '1234567890', 'admin'),
-(2, 'boss', 'boss', 'boss@gmail.com', '123456', '1234567890', 'boss'),
-(3, 'staff', 'staff', 'staff@gmail.com', '123456', '1234567890', 'staff'),
-(4, 'employee', 'employee', 'employee@gmail.com', '123456', '1234567890', 'employee');
+INSERT INTO `tbl_member` (`m_ID`, `m_NameTitle`, `m_FName`, `m_LName`, `m_Email`, `m_Password`, `m_Tel`, `m_Img`, `m_Department`) VALUES
+(1, 'นาย', 'admin', 'admin', 'admin@gmail.com', '123456', '1234567890', '', 'admin'),
+(2, 'นาง', 'boss', 'boss', 'boss@gmail.com', '123456', '1234567890', '', 'boss'),
+(3, 'นางสาว', 'staff', 'staff', 'staff@gmail.com', '123456', '1234567890', '', 'staff'),
+(4, 'นาย', 'employee', 'employee', 'employee@gmail.com', '123456', '1234567890', '', 'employee'),
+(5, 'นาย', 'bill', 'murray', 'admin@gmail.com', '12345', '1234567890', '', 'admin'),
+(6, 'นาย', 'gg', 'ez', 'gg@gmail.com', '123456', '1234567890', '20211027329021010.png', 'admin'),
+(7, 'นางสาว', 'mm', 'mm', 'mm@gmail.com', '123456', '1234567890', '202110271522874706.png', 'admin'),
+(8, 'นาย', 'niti', 'gg', 'bill@gmail.com', '123456', '1234567890', '202110271383136968.png', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +71,7 @@ ALTER TABLE `tbl_member`
 -- AUTO_INCREMENT for table `tbl_member`
 --
 ALTER TABLE `tbl_member`
-  MODIFY `m_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `m_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

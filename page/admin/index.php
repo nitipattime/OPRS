@@ -1,5 +1,5 @@
 <?php include("../service/head.php"); ?>
-<?php include("datatables.php"); ?>
+<?php include("show_member_db.php"); ?>
 
 <body class="skin-red sidebar-mini">
     <div class="wrapper">
@@ -16,7 +16,7 @@
                     จัดการสมาชิก
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="http://127.0.0.1/eprojectv1.1/"><i class="fa fa-dashboard"></i> หน้าแรก</a></li>
+                    <li><a href="index.php"><i class="fa fa-dashboard"></i> หน้าแรก</a></li>
                     <li class="active"> จัดการสมาชิก </li>
                 </ol>
             </section>
@@ -43,12 +43,14 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <br />
-                                    <table id="example1" class="table table-bordered table-striped dataTable " role="grid" aria-describedby="example1_info">
+                                    <table id="example2" class="table table-bordered table-striped dataTable " role="grid" aria-describedby="example1_info">
                                         <thead>
                                             <tr role="row" class="info" >
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 5%;" >id</th>
-                                                <th tabindex="0" rowspan="1" colspan="1" style="width: 15%;">FName</th>
+                                                <th tabindex="0" rowspan="1" colspan="1" style="width: 15%;">Name Title</th>
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 15%;">LName</th>
+                                                <th tabindex="0" rowspan="1" colspan="1" style="width: 15%;">FName</th>
+                                                
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 20%;">Email</th>
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 10%;">Password</th>
                                                 <th tabindex="0" rowspan="1" colspan="1" style="width: 10%;">Tel</th>
@@ -62,19 +64,20 @@
                                             <?php foreach ($result as $row) { ?>
                                                 <tr role="row" align="center">
                                                     <td><?php echo $row['m_ID'] ?> </td>
+                                                    <td><?php echo $row['m_NameTitle'] ?></td>
                                                     <td><?php echo $row['m_FName'] ?></td>
-                                                    <td><?php echo $row['m_FName'] ?></td>
+                                                    <td><?php echo $row['m_LName'] ?></td>
                                                     <td><?php echo $row['m_Email'] ?></td>
                                                     <td><?php echo $row['m_Password'] ?></td>
                                                     <td><?php echo $row['m_Tel'] ?></td>
                                                     <td><?php echo $row['m_Department'] ?></td>
                                                     <td>
-                                                        <a href="repassw.php" class="btn btn-info btn-xs">
+                                                        <a href="from_repasswmember.php?m_ID=<?php echo $row['m_ID'] ?>" class="btn btn-info btn-xs">
                                                         Rpwd
                                                         </a>
                                                     </td>
                                                     <td>
-                                                    <a href="from_editmember.php" class="btn btn-warning btn-xs">
+                                                    <a href="from_editmember.php?m_ID=<?php echo $row['m_ID'] ?>" class="btn btn-warning btn-xs">
                                                         Edit
                                                     </a>
                                                     </td>
@@ -387,7 +390,7 @@
         $('#example2').DataTable({
             'paging': true,
             'lengthChange': false,
-            'searching': false,
+            'searching': true,
             'ordering': true,
             'info': true,
             'autoWidth': false

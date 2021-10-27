@@ -1,5 +1,6 @@
 <?php
-    include "../../condb.php";
+    // include "../../condb.php";
+    require_once ("../../condb.php");
 
     $sql = "SELECT * FROM tbl_member";
 

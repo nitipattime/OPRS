@@ -1,3 +1,6 @@
+<?php 
+//echo $_GET['m_ID'];
+?>
 <?php include("../service/head.php"); ?>
 
 <body class="skin-red sidebar-mini">
@@ -6,7 +9,7 @@
 		<?php include("../service/header.php"); ?>
 
 		<!-- Sidebar -->
-		<?php include("../service/sidebar.php"); ?>
+		<?php include("../service/sidebar_admin.php"); ?>
 		
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->

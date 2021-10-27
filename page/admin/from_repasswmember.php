@@ -1,3 +1,6 @@
+<?php 
+//echo "m_ID : ".$_GET['m_ID'];
+?>
 <?php include("../service/head.php"); ?>
 
 <body class="skin-red sidebar-mini">

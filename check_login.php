@@ -9,7 +9,7 @@
     //! ปิดแสดง Error   
     error_reporting(0);
 
-    include "condb.php";
+    require_once ("condb.php");
     //! Check Connect Database
         // if($condb){
         //         echo"Connect Database";
@@ -54,6 +54,7 @@
         $_SESSION["Email"] = $row["m_Email"];
         $_SESSION["Name"] = $row["m_FName"]." ".$row["m_LName"] ;
         $_SESSION["Department"] = $row["m_Department"];
+        $_SESSION["m_Img"] = $row["m_Img"];
         //! Check $_SESSION
             // print_r($_SESSION);
             // echo $_SESSION["Email"];
