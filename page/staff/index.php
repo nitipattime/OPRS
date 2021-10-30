@@ -1,5 +1,8 @@
 <?php include("../service/head.php"); ?>
 
+<?php include("show_report_member_db.php"); ?>
+
+
 <body class="skin-red sidebar-mini">
     <div class="wrapper">
         <!-- Main Header -->
@@ -40,10 +43,10 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody align="center">
 
-                                            <tr role="row">
-                                                <td align="center">2019-06-20 10:14:53</td>
+                                            <tr role="row" >
+                                                <td>2019-06-20 10:14:53</td>
                                                 <td>
                                                     นายจัดการ12 พัสดุ12<br>เหตุผล ฟดฟหดหฟ
                                                 </td>

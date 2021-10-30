@@ -5,7 +5,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="http://127.0.0.1/eprojectv1.1/uploads/5b0b7d0c540eb273d1d56e5513e751d5.png" class="img-circle" alt="User Image" />
+                <img src="../../assets/images/<?php echo $_SESSION['m_Img']; ?>" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>
@@ -61,7 +61,7 @@
             </li>
             <li>
                 <a href="../../logout.php" onclick="return confirm('ยืนยัน');">
-                <i class="fa fa-circle-o"></i> Logout </a>
+                <i class="fa fa-circle-o"></i> <span>Logout</span> </a>
             </li>
 
         </ul><!-- /.sidebar-menu -->

@@ -27,7 +27,9 @@
     <div class="row justify-content-center">
       <section class="col-lg-6">
         <div class="card shadow p-3 p-md-4">
-          <h1 class="text-center"><img src="assets/LOGO KMUTNB .png" width="120" height="120"  alt="LOGO KMUTNB"></h1>
+          <h1 class="text-center">
+            <img src="assets/LOGO KMUTNB .png" width="120" height="120"  alt="LOGO KMUTNB">
+          </h1>
           <h2 class="text-center font-weight-bold" style="color:#AC3520;">LOGIN <span style="color:black;">OPRS FAA</span> </h2>
           <!-- <h4 class="text-center">OPRS</h4>  -->
           <div class="card-body">

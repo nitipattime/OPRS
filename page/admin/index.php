@@ -82,7 +82,7 @@
                                                     </a>
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-danger btn-xs" href="deletemember.php" role="button" onclick="return confirm('confirm delete?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
+                                                        <a class="btn btn-danger btn-xs" href="delete_member.php?m_ID=<?php echo $row['m_ID'] ?>" role="button" onclick="return confirm('confirm delete?');"><i class="fa fa-fw fa-trash"></i>Delete</a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

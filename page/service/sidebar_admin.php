@@ -5,7 +5,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="../../assets/images/<?php echo $_SESSION['m_Img']; ?>" class="img-circle" alt="User Image" />
+                <img src="../../assets/images/<?php echo $_SESSION['m_Img'] ?>" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>

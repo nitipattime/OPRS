@@ -13,34 +13,34 @@ $m_LName = $_POST['m_LName']; //รับค่าไฟล์จากฟอร
 $m_Email = $_POST['m_Email']; //รับค่าไฟล์จากฟอร์ม	
 $m_Password = $_POST['m_Password']; //รับค่าไฟล์จากฟอร์ม	
 $m_Tel = $_POST['m_Tel']; //รับค่าไฟล์จากฟอร์ม	
-$fileupload = $_POST['m_Img']; //รับค่าไฟล์จากฟอร์ม	
+$fileupload = $_FILES['m_Img']; //รับค่าไฟล์จากฟอร์ม	
 // echo $fileupload;
 // exit();
 // echo date("H:i:s");
 // exit();
 
 //ฟังก์ชั่นวันที่
-    date_default_timezone_set('Asia/Bangkok');
-	$date = date("Ymd");	
+date_default_timezone_set('Asia/Bangkok');
+$date = date("Ymd");	
 //ฟังก์ชั่นสุ่มตัวเลข
-    $numrand = (mt_rand());
+$numrand = (mt_rand());
 //เพิ่มไฟล์
 $upload=$_FILES['m_Img'];
 if($upload != '') {   //not select file
-        //โฟลเดอร์ที่จะ upload file เข้าไป 
-        $path="../../assets/images/";  
+    //โฟลเดอร์ที่จะ upload file เข้าไป 
+    $path="../../assets/images/";  
 
-        //เอาชื่อไฟล์เก่าออกให้เหลือแต่นามสกุล
-        $type = strrchr($_FILES['m_Img']['name'],".");
-            
-        //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
-        $newname = $date.$numrand.$type;
-        $path_copy=$path.$newname;
-        $path_link="m_Img/".$newname;
+    //เอาชื่อไฟล์เก่าออกให้เหลือแต่นามสกุล
+    $type = strrchr($_FILES['m_Img']['name'],".");
+        
+    //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
+    $newname = $date.$numrand.$type;
+    $path_copy=$path.$newname;
+    $path_link="m_Img/".$newname;
 
-        //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
-        move_uploaded_file($_FILES['m_Img']['tmp_name'],$path_copy);  	
-	}
+    //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
+    move_uploaded_file($_FILES['m_Img']['tmp_name'],$path_copy);  	
+}
 	// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 	
     $sql = "INSERT INTO tbl_member 

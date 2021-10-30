@@ -86,7 +86,7 @@
 												ชื่อ
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_name" class="form-control" required value="<?php echo $row['m_FName']?>">
+												<input type="text" name="m_FName" class="form-control" required value="<?php echo $row['m_FName']?>">
 												</span>
 											</div>
 										</div>
@@ -95,8 +95,8 @@
 												นามสกุล
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_lname" class="form-control" required value="<?php echo $row['m_LName']?>">
-												<input type="hidden" name="m_id" class="form-control" required value="10">
+												<input type="text" name="m_LName" class="form-control" required value="<?php echo $row['m_LName']?>">
+												<input type="hidden" name="m_ID" class="form-control" required value="<?php echo $row['m_ID']?>">
 											</div>
 										</div>
 
@@ -105,7 +105,7 @@
 												email
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_email" class="form-control" required value="<?php echo $row['m_Email']?>" disabled>
+												<input type="text" name="m_Email" class="form-control" required value="<?php echo $row['m_Email']?>" disabled>
 											</div>
 										</div>
 
@@ -114,7 +114,7 @@
 												phone
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="m_phone" class="form-control" required value="<?php echo $row['m_Tel']?>">
+												<input type="text" name="m_Tel" class="form-control" required value="<?php echo $row['m_Tel']?>">
 											</div>
 										</div>
 
@@ -127,9 +127,13 @@
 												<br>
 												ภาพเก่า <br><br>
 												<img src="../../assets/images/<?php echo $row['m_Img']?>" width="300px">
-												<br><br>
+												<br>
+												<?php echo $row['m_Img']?><br><br>
 												เลือกไฟล์ใหม่<br>
-												<input type="file" name="m_img" class="form-control" accept="image/*">
+												<input type="file" name="m_Img" id="m_Img"
+												class="form-control" accept="image/*" value="C://Users//nitip//Downloads//spotify-logo-png-7053.png">
+
+												<input type="hidden" name="m_img" class="form-control" required value="<?php echo $row['m_Img']?>">
 											</div>
 										</div>
 
@@ -141,7 +145,7 @@
 											<div class="col-sm-3">
 												<button class="btn btn-primary" type="submit">
 													<i class="fa fa-fw fa-save"></i> บันทึกข้อมูล</button>
-												<a class="btn btn-danger" href="http://127.0.0.1/eprojectv1.1/member" role="button"><i class="fa fa-fw fa-close"></i> ยกเลิก</a>
+												<a class="btn btn-danger" href="index.php" role="button"><i class="fa fa-fw fa-close"></i> ยกเลิก</a>
 
 
 											</div>
@@ -149,7 +153,9 @@
 
 									</div><!-- /.box-body -->
 								</form>
+								
 								<?php } ?>
+								<script>document.getElementById('m_Img').submit();</script>
 							</div>
 						</div>
 					</div>
